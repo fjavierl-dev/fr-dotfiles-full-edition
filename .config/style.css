@@ -1,0 +1,86 @@
+/* Fondo general de la barra */
+window#waybar {
+  background: rgba(20, 20, 20, 0.55);
+}
+
+/* IMPORTANTE: nada más debe tener fondo por defecto */
+#workspaces {
+  background: transparent;
+}
+
+#workspaces button {
+  background: transparent;
+}
+
+/* SOLO el activo se resalta */
+#workspaces button.active {
+  background: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+#custom-rofi-theme {
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+
+#waybar * {
+  padding: 0 6px;
+}
+
+
+#custom-settings {
+    font-size: 22px;
+    padding: 0 6px;
+}
+
+
+/* ===== GRID 2x2 ===== */
+#custom-ws-grid {
+  background: transparent;
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 2px 4px;
+  margin: 0 6px;
+}
+
+
+/* custom power */
+
+#custom-power {
+  color: #f38ba8; 
+  font-size: 22px;
+  padding: 0 10px;
+}
+
+#custom-power:hover {
+  background: rgba(243, 139, 168, 0.2);
+  border-radius: 6px;
+}
+
+
+
+
+/* cada cuadrado */
+#custom-ws-grid button {
+  min-width: 10px;
+  min-height: 10px;
+
+  margin: 2px;     /* ← ESTE es el spacing real */
+  padding: 0;
+
+  border-radius: 2px;
+  background: rgba(255,255,255,0.25);
+}
+
+/* activo */
+#custom-ws-grid button.active {
+  background: rgba(255,255,255,0.9);
+}
+
+/* hover */
+#custom-ws-grid button:hover {
+  background: rgba(255,255,255,0.6);
+}

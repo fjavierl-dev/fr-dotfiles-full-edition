@@ -1,0 +1,38 @@
+monitor=,preferred,auto,1
+
+input {
+  kb_layout = latam
+}
+
+general {
+  gaps_in = 5
+  gaps_out = 10
+  border_size = 2
+}
+
+decoration {
+  rounding = 8
+  blur {
+    enabled = true
+    size = 6
+    passes = 2
+  }
+}
+
+# Apps básicas
+bind = SUPER, RETURN, exec, alacritty
+bind = SUPER, B, exec, brave-browser
+bind = SUPER, Q, exit,
+bind = SUPER, R, exec, hyprctl reload
+exitbind = SUPER, D, exec, wofi --show drun
+bind = SUPER ALT, left, movefocus, l
+bind = SUPER ALT, right, movefocus, r
+bind = SUPER ALT, up, movefocus, u
+bind = SUPER ALT, down, movefocus, d
+
+
+
+# Ventanas con mouse
+bindm = SUPER, mouse:272, movewindow
+bindm = SUPER, mouse:273, resizewindow
+

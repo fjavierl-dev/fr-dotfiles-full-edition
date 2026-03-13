@@ -1,0 +1,86 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+
+  "modules-left": ["custom/ws-test","custom/ws-mode",
+"custom/ws-switch","hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": ["custom/rofi-theme","custom/wallpaper","bluetooth","network","clock"],
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4]
+    }
+  },
+
+
+"custom/ws-grid": {
+  "exec": "~/.config/waybar/scripts/ws-grid.sh",
+  "return-type": "json",
+  "interval": 1
+},
+
+
+"custom/ws-mode": {
+  "exec": "~/.config/waybar/scripts/ws-dispatcher.sh",
+  "return-type": "json",
+  "interval": 1
+},
+
+"custom/ws-switch": {
+  "format": "🧭",
+  "tooltip": "Cambiar modo de escritorios",
+  "on-click": "~/.config/waybar/scripts/switch-ws-mode.sh"
+},
+
+
+"custom/ws-test": {
+  "exec": "~/.config/waybar/scripts/ws-test.sh",
+  "interval": 1,
+  "return-type": "json"
+}
+
+
+
+
+  "clock": {
+    "format": "{:%H:%M}"
+  },
+
+
+"custom/rofi-theme": {
+  "format": "🎨",
+  "tooltip": "Cambiar tema de Rofi",
+  "on-click": "~/.config/waybar/scripts/rofi-theme-selector.sh"
+},
+
+
+
+
+"custom/wallpaper": {
+  "format": "󰸉",
+  "tooltip": "Cambiar fondo",
+  "on-click": "~/.config/hypr/scripts/wallpaper-picker.sh"
+},
+
+
+
+"bluetooth": {
+  "format": "BT {status}",
+  "format-connected": "BT {device_alias}",
+  "format-disabled": "BT off",
+  "on-click": "blueman-manager"
+},
+
+
+  "network": {
+    "format-wifi": "{essid}",
+    "format-ethernet": "{LAN}",
+    "format-disconnected": "{NO WIFI}", 
+    "on-click": "nm-applet"
+  }
+
+},

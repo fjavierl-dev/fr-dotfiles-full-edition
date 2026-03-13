@@ -1,0 +1,13 @@
+{
+  "left": ["custom/ws-grid"],
+  "center": ["clock"],
+  "right": [
+    "network",
+    "tray",
+    "pulseaudio",
+    "custom/rofi-theme",
+    "custom/wallpaper",
+    "custom/settings",
+    "custom/power"
+  ]
+}

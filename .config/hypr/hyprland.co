@@ -1,0 +1,138 @@
+monitor=,preferred,auto,1
+
+input {
+  kb_layout = latam
+}
+
+general {
+  gaps_in = 5
+  gaps_out = 10
+  border_size = 0
+  col.active_border = rgba(ed254dee) rgba(fbff11ee) 45deg 
+}
+
+
+
+decoration {
+    rouding = 4
+    blur {
+        enabled = true
+        size = 4
+        passes = 1
+    }
+}
+
+
+env = XCURSOR_THEME,breeze_cursors
+env = XCURSOR_SIZE,24
+env = HYPRCURSOR_THEME,breeze_cursors
+env = HYPRCURSOR_SIZE,24
+
+
+
+animations {
+  enabled = true
+
+  animation = windows, 1, 3, default
+  animation = border,  1, 3, default
+  animation = fade,    1, 3, default
+  animation = workspaces, 1, 3, default
+}
+
+
+
+
+
+
+input {
+    numlock_by_default = true
+}
+
+
+
+
+
+exec-once = waybar
+exec-once = nm-applet --indicator
+exec-once = ~/.config/hypr/scripts/restore-wallpaper.sh
+exec-once = blueman-applet
+exec-once = swww-daemon
+exec-once = gnome-keyring-daemon --start --components=secrets
+exec-once = swayosd-server
+exec-once = ~/.config/hypr/scripts/wallpaper-video-autostart.sh
+	
+
+
+
+# Apps básicas
+bind = SUPER, RETURN, exec, kitty
+bind = SUPER, B, exec, brave-browser
+bind = SUPER, Q, killactive,
+bind = SUPER, R, exec, hyprctl reload
+bind = SUPER, D, exec, rofi -show drun
+bind = SUPER ALT, left, movefocus, l
+bind = SUPER ALT, right, movefocus, r
+bind = SUPER ALT, up, movefocus, u
+bind = SUPER ALT, down, movefocus, d
+
+
+source = ~/.config/hypr/workspaces.conf
+source = ~/.config/hypr/workspace-binds.conf
+source = ~/.config/hypr/single-workspace-mode.conf
+
+
+
+
+
+bind = SUPER, left,  exec, ~/.config/hypr/scripts/ws-dispatcher.sh left
+bind = SUPER, right, exec, ~/.config/hypr/scripts/ws-dispatcher.sh right
+bind = SUPER, up,    exec, ~/.config/hypr/scripts/ws-dispatcher.sh up
+bind = SUPER, down,  exec, ~/.config/hypr/scripts/ws-dispatcher.sh down
+
+
+# --- Volume Control (1% step + OSD) ---
+
+# Keyboard
+bind = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +1% && swayosd-client --output-volume
+bind = , XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -1% && swayosd-client --output-volume
+bind = , XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle && swayosd-client --output-volume
+
+# Mouse side buttons (portable)
+bind = , mouse:276, exec, pactl set-sink-volume @DEFAULT_SINK@ +1% && swayosd-client --output-volume
+bind = , mouse:9,   exec, pactl set-sink-volume @DEFAULT_SINK@ +1% && swayosd-client --output-volume
+
+bind = , mouse:275, exec, pactl set-sink-volume @DEFAULT_SINK@ -1% && swayosd-client --output-volume
+bind = , mouse:8,   exec, pactl set-sink-volume @DEFAULT_SINK@ -1% && swayosd-client --output-volume
+
+
+
+
+
+# Ventanas con mouse
+bindm = SUPER, mouse:272, movewindow
+bindm = SUPER, mouse:273, resizewindow
+
+
+
+# Mover ventana flotante / tiled con SUPER + CTRL + flechas
+bind = SUPER CTRL, left,  movewindow, l
+bind = SUPER CTRL, right, movewindow, r
+bind = SUPER CTRL, up,    movewindow, u
+bind = SUPER CTRL, down,  movewindow, d
+
+
+# Cambiar foco con SUPER + SHIFT + flechas
+bind = SUPER SHIFT, left,  movefocus, l
+bind = SUPER SHIFT, right, movefocus, r
+bind = SUPER SHIFT, up,    movefocus, u
+bind = SUPER SHIFT, down,  movefocus, d
+
+
+
+
+
+
+
+
+
+

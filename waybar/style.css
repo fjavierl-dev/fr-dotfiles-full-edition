@@ -1,0 +1,78 @@
+/* Fondo general de la barra - MANTENEMOS LA OPACIDAD */
+window#waybar {
+  background: rgba(20, 20, 20, 0.4);
+}
+
+/* IMPORTANTE: nada más debe tener fondo por defecto */
+#workspaces {
+  background: transparent;
+}
+
+#workspaces button {
+  background: transparent;
+}
+
+/* SOLO el activo se resalta */
+#workspaces button.active {
+  background: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+#custom-rofi-theme {
+  padding: 2px 4px; /* Reducido */
+  font-size: 13px;
+}
+
+/* Contenedor principal */
+#waybar {
+  border: none; 
+  padding: 2px; 
+}
+
+/* Reducción de espacio en módulos específicos */
+#custom-settings {
+    font-size: 20px; /* Un pelín más pequeño para ajustar */
+    padding: 0 4px;  /* Reducido de 6 a 4 */
+}
+
+#custom-power {
+  color: #f38ba8; 
+  font-size: 20px;   /* Un pelín más pequeño */
+  padding: 0 6px;    /* Reducido de 10 a 6 */
+}
+
+#custom-power:hover {
+  background: rgba(243, 139, 168, 0.4);
+  border-radius: 6px;
+}
+
+/* ===== GRID 2x2 ===== */
+#custom-ws-grid {
+  background: transparent;
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 2px 2px; /* Reducido */
+  margin: 0 4px;    /* Reducido de 6 a 4 */
+}
+
+/* Espaciado para el resto de módulos (Reloj, Batería, etc.) */
+/* Añadimos esto para que no estén tan separados por defecto */
+#clock, #battery, #pulseaudio, #network, #cpu, #memory, #tray {
+    padding: 0 4px; 
+}
+
+/* cada cuadrado del grid */
+#custom-ws-grid button {
+  min-width: 10px;
+  min-height: 10px;
+  margin: 1px;     /* Reducido de 2 a 1 */
+  padding: 0;
+  border-radius: 2px;
+  background: rgba(255,255,255, 0.4);
+}
+
+#custom-ws-grid button.active {
+  background: rgba(255,255,255, 0.4);
+}

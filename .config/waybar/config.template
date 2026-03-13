@@ -1,0 +1,92 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 18,
+
+  "modules-left": __LEFT__,
+  "modules-center": __CENTER__,
+  "modules-right": __RIGHT__,
+
+
+
+
+  "tray": {
+    "spacing": 2
+  },
+
+
+  "custom/ws-grid": {
+    "exec": "~/.config/waybar/scripts/ws-grid.sh",
+    "return-type": "json",
+    "interval": 1
+  },
+
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4]
+    }
+
+  },
+
+  "custom/ws-mode": {
+    "exec": "~/.config/waybar/scripts/ws-mode.sh",
+    "interval": 1,
+    "return-type": "json",
+    "on-click": "~/.config/waybar/scripts/ws-toggle.sh"
+  },
+
+  "custom/settings": {
+    "format": "⚙",
+    "tooltip": "Configuración",
+    "on-click": "~/.config/waybar/scripts/settings-menu.sh"
+  },
+
+  "custom/ws-test": {
+    "exec": "~/.config/waybar/scripts/ws-test.sh",
+    "interval": 1,
+    "return-type": "json"
+  },
+
+  "clock": {
+    "format": "{:%H:%M}"
+  },
+
+  "custom/rofi-theme": {
+    "format": "🎨",
+    "tooltip": "Cambiar tema de Rofi",
+    "on-click": "~/.config/waybar/scripts/rofi-theme-selector.sh"
+  },
+
+  "custom/wallpaper": {
+    "format": "󰸉",
+    "tooltip": "Cambiar fondo",
+    "on-click": "~/.config/hypr/scripts/wallpaper-picker.sh"
+  },
+
+
+  "network": {
+    "format-wifi": "{essid}",
+    "format-ethernet": "LAN",
+    "format-disconnected": "No WiFi",
+    "tooltip-format": "{ifname} via {gwaddr}"
+  },
+
+  "pulseaudio": {
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "format": "{volume}% ",
+    "format-muted": ""
+  },
+
+
+
+  "custom/power": {
+    "format": "",
+    "tooltip": "Power menu",
+    "on-click": "wlogout",
+    "on-click-right": "systemctl poweroff"
+  }
+}

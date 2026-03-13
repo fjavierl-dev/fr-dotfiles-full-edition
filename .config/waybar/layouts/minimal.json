@@ -1,0 +1,10 @@
+{
+  "left": [],
+  "center": ["clock"],
+  "right": [
+    "network",
+    "pulseaudio",
+    "custom/settings",
+    "custom/power"
+  ]
+}

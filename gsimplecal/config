@@ -1,0 +1,10 @@
+# Mostrar la semana comenzando en lunes (0 para domingo, 1 para lunes)
+show_week_numbers = 0
+first_day_of_week = 1
+
+# Cerrar si pierdes el foco (muy útil en Hyprland)
+close_on_unfocus = 1
+
+# Posición (esto lo puedes ajustar luego)
+mainwindow_xoffset = 0
+mainwindow_yoffset = 5
